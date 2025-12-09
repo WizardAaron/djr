@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Radical Racing Games home page. Discover racing games and car games you are sure to enjoy!">
+    <meta name="author" content="Ethan Long">
+    <title>Home: Radical Racing Games</title>
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Radical Racing Games Home">
+    <meta property="og:description" content="Explore a wide variety of racing games featured on Radical Racing Games.">
+    <meta property="og:image" content="https://wizardaaron.github.io/wdd231/radicalracinggames/images/rrg-logo.svg">
+    <meta property="og:url" content="https://wizardaaron.github.io/wdd231/radicalracinggames/">
+    <meta property="og:type" content="website">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Scripts -->
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/pexels-api.js" defer></script>
+    <script src="scripts/home-wireframes-button.js" defer></script>
+
+    <!-- Fonts -->
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="radicalracinggames/images/rrg-favicon.ico">
+</head>
+<body class="home">
+    <header>
+        <img src="images/rrg-logo.svg" alt="Site Logo" width="512" height="512" loading="lazy">
+        <p class="rrg-title"><span>Radical Racing Games</span></p>
+        <button id="ham-menu" class="hamburger" title="Open navigation menu" aria-label="Open navigation menu"></button>
+    </header>
+    <nav id="nav-bar" class="navigation">
+        <ul>
+            <li class="current"><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="communities.html">Communities</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <h2 class="visually-hidden">Welcome to Radical Racing Games</h2>
+        <picture>
+          <source srcset="images/hero-image-desktop-rrg.jpg" media="(min-width: 768px)">
+          <img src="images/hero-image-mobile-rrg.jpg" alt="Sports car speeding along a winding desert road surrounded by red rock formations and sparse vegetation under a clear blue sky, evoking excitement and adventure. No visible text in the image." loading="lazy">
+        </picture>
+        <div class="hero-button">
+            <a href="games.html" class="cta-button">Start Exploring Now!</a>
+        </div>
+    </section>
+    <main>
+        <h1>Home: Radical Racing Games</h1>
+        <section class="pexels-photo">
+          <h2>Racing Game Image</h2>
+          <div id="pexels-image-container"></div>
+        </section>
+        <section class="site-purpose">
+            <h2>Purpose of RRG</h2>
+            <p>Radical Racing Games is your gateway to the most thrilling racing game
+                experiences online. Whether you're a casual driver or a competitive speedster,
+                our platform connects you with a curated selection of racing games, vibrant gaming
+                communities. Users can explore dynamic visuals, discover new titles, and engage
+                with fellow racers through shared content and social links.</p>
+        </section>
+        <section class="game-accessibility-query">
+            <h2>"What racing games can I play on my device?"</h2>
+            <p>Radical Racing Games showcases a variety of racing titles that span many platforms, 
+                ranging from mobile to console to PC. Whether you're using a smartphone, tablet,
+                gaming console, or desktop computer, we highlight games that are compatible with your
+                device and easy to access.</p>
+        </section>
+        <section class="how-to-connect-query">
+            <h2>“How can I connect with other racing game fans?”</h2>
+            <p>Check out our Communities page, where we list active forums,
+                Discord servers, and social media groups dedicated to racing games.
+                Whether you're looking to share gameplay tips, join tournaments, or
+                just chat with fellow racers, we've got links to help you drift into
+                the action.</p>
+        </section>
+        <section class="color-schema">
+            <h2>Color Schema (Temporary Section?)</h2>
+            <p>Primary Color:</p>
+            <p class="color-schema-primary">#080808;</p>
+            <p>Primary Accent Color:</p>
+            <p class="color-schema-primary-accent">#1a1a1a;</p>
+            <p>Secondary Color:</p>
+            <p class="color-schema-secondary">#320000;</p>
+            <p>Accent Color:</p>
+            <p class="color-schema-secondary-accent">#422828;</p>
+        </section>
+        <section class="typography">
+            <h2>Typography (Temporary Section?)</h2>
+            <p>Heading Font: "Roboto Slab", serif<br>- Used for Titles, Headings, and Sub-Headings</p>
+            <p>Body Font: "Merriweather", serif<br>- Used for everything else</p>
+        </section>
+        <section class="wireframe-section">
+            <h2>Wireframe (Temporary Section?)</h2>
+            <button class="wireframe-page-button">View Wireframes</button>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-left">
+            <p>Radical Racing Games</p>
+            <a href="attributions.html">Attributions</a>
+            <p>radicalracing.contactus@gmail.com</p>
+            <a href="https://youtu.be/ycUzzifQkX0">Javascript Video</a>
+        </div>
+
+        <div class="footer-center">
+            <div class="social">
+                <a href="https://youtube.com" target="_blank"><img src="images/youtube-icon.svg" alt="YouTube" width="24" height="24" loading="lazy"></a>
+                <a href="https://x.com" target="_blank"><img src="images/twitter-x-icon.svg" alt="Twitter / X" width="24" height="24" loading="lazy"></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin-icon.svg" alt="LinkedIn" width="24" height="24" loading="lazy"></a>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <p>WDD 231 Class Project</p>
+            <p>Created by Ethan Long</p>
+            <p>&copy; <span id="year"></span> Radical Racing Games</p>
+            <p id="lastModified">Last Modification: <span id="short"></span></p>
+        </div>
+    </footer>
+</body>
+</html>

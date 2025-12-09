@@ -64,6 +64,27 @@ export async function loadHeaderFooter() {
 
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
+  
+  // Initialize hamburger menu after header is loaded
+  initHamburgerMenu();
+}
+
+// Initialize hamburger menu functionality
+function initHamburgerMenu() {
+  const hamburger = document.querySelector('#ham-menu');
+  const navigation = document.querySelector('.navigation');
+  
+  if (hamburger && navigation) {
+    hamburger.addEventListener('click', () => {
+      navigation.classList.toggle('show');
+      hamburger.classList.toggle('show');
+      
+      // Update aria-label for accessibility
+      const isOpen = navigation.classList.contains('show');
+      hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      hamburger.setAttribute('title', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+  }
 }
 
 // display alert message

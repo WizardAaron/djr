@@ -3,70 +3,81 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital Jam Radio - Apply audio filters to your favorite songs and discover new ways to enjoy music.">
+    <meta name="author" content="Ethan Long">
     <title>Digital Jam Radio | Home</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-large.css">
+    
+    <!-- Scripts -->
     <script src="js/main.js" type="module"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/logos/djr-favicon.ico">
   </head>
 
-  <body>
-    <header class="divider" id="main-header">
+  <body class="home">
+    <header id="main-header">
     </header>
 
-    <main class="divider">
-      <div class="hero">
-        <img
-          src="images/banner-sm.jpg"
-          srcset="images/banner-sm.jpg 500w, images/banner.jpg"
-          alt="image of a high mountain lake"
-        >
-        <div class="logo logo--square">
-          <img src="images/noun_Tent_2517.svg" alt="tent image for logo">
-          <div>Sleep<span class="highlight">Outside</span></div>
-        </div>
-        <div class="mission">
-          <p>
-            Our mission is to provide you with everything you need to sleep
-            outside comfortably at an affordable price.
-          </p>
-        </div>
-      </div>
+    <nav id="nav-bar" class="navigation">
+      <ul>
+        <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="djr_music_explorer/index.html">Music Explorer</a></li>
+        <li><a href="djr_audio_playground/index.html">Audio Playground</a></li>
+        <li><a href="djr-contact-us/index.html">Contact Us</a></li>
+      </ul>
+    </nav>
 
-      <section class="categories">
-        <h2>Shop by Category</h2>
-        <ul class="category-list">
-          <li class="category-card">
-            <a href="product_listing/?category=tents">
-              <img src="images/category-icons/category-tents.svg" alt="Tents">
-              <h3>Tents</h3>
-            </a>
-          </li>
-          <li class="category-card">
-            <a href="product_listing/?category=backpacks">
-              <img src="images/category-icons/category-backpacks.svg" alt="Backpacks">
-              <h3>Backpacks</h3>
-            </a>
-          </li>
-          <li class="category-card">
-            <a href="product_listing/?category=sleeping-bags">
-              <img src="images/category-icons/category-sleepingbags.svg" alt="Sleeping Bags">
-              <h3>Sleeping Bags</h3>
-            </a>
-          </li>
-          <li class="category-card">
-            <a href="product_listing/?category=hammocks">
-              <img src="images/category-icons/category-hammocks.svg" alt="Hammocks">
-              <h3>Hammocks</h3>
-            </a>
-          </li>
-        </ul>
+    <section class="hero">
+      <h2 class="visually-hidden">Welcome to Digital Jam Radio</h2>
+      <picture>
+        <source srcset="images/banner-large.jpg" media="(min-width: 768px)">
+        <img src="images/banner-small.jpg" alt="Digital Jam Radio hero banner showcasing music and audio" loading="lazy">
+      </picture>
+      <div class="hero-button">
+        <a href="djr_music_explorer/index.html" class="cta-button">Start Exploring Music!</a>
+      </div>
+    </section>
+
+    <main>
+      <h1>Home: Digital Jam Radio</h1>
+      
+      <section class="site-purpose">
+        <h2>About Digital Jam Radio</h2>
+        <p>Digital Jam Radio is your gateway to a fresh music experience. 
+        Tired of listening to the same old songs? We let you search for tracks, 
+        apply audio filters like reverb, bass boost, and echo, and rediscover 
+        your favorite music in entirely new ways. Build playlists, save favorites, 
+        and make every listening session unique.</p>
       </section>
 
-      <section class="products">
-        <h2>Top Products</h2>
-        <ul class="product-list">
-          <!-- Products will be loaded dynamically by ProductList.mjs -->
-        </ul>
+      <section class="audio-filters-info">
+        <h2>Transform Your Music</h2>
+        <p>Apply professional audio filters directly in your browser. Add depth 
+        with reverb, pump up the bass, create atmospheric echoes, and more. 
+        Our Audio Playground lets you experiment with different effects and find 
+        your perfect sound.</p>
+      </section>
+
+      <section class="music-explorer-info">
+        <h2>Discover & Search</h2>
+        <p>Use our Music Explorer to search for tracks using the Spotify API. 
+        Play songs directly in your browser, apply filters on the fly, and add 
+        your favorites to custom playlists. Track your listening history and 
+        see what resonates with you most.</p>
+      </section>
+
+      <section class="features-overview">
+        <h2>Features</h2>
+        <p>• Search and play songs with Spotify integration<br>
+        • Apply real-time audio filters and effects<br>
+        • Create and manage custom playlists<br>
+        • Save favorite tracks with localStorage<br>
+        • Track playback and filter usage analytics<br>
+        • Responsive design for mobile and desktop</p>
       </section>
     </main>
     

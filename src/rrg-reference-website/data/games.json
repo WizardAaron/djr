@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Sonic Racing: CrossWorlds",
+    "platforms": "PC, Nintendo Switch, Nintendo Switch 2, Xbox One, Xbox Series S, Xbox Series X, PlayStation 4, PlayStation 5",
+    "cost": "$69.99",
+    "description": "A fast-paced, action-packed racing game featuring Sonic and friends.",
+    "image": "images/game-images/sonic-racing-crossworlds.webp"
+  },
+  {
+    "name": "Mario Kart World",
+    "platforms": "Nintendo Switch 2",
+    "cost": "$79.99",
+    "description": "A fun and competitive open-world kart racing game featuring Mario and friends.",
+    "image": "images/game-images/mario-kart-world.webp"
+  },
+  {
+    "name": "Trackmania",
+    "platforms": "PC, Xbox One, Xbox Series X | S, PlayStation 4, PlayStation 5, Luna",
+    "cost": "Free",
+    "description": "A high-speed racing game with a focus on time trials and stunts.",
+    "image": "images/game-images/trackmania.jpg"
+  },
+  {
+    "name": "Rocket League",
+    "platforms": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series S, Xbox Series X, Nintendo Switch, Nintendo Switch 2",
+    "cost": "Free",
+    "description": "A unique blend of soccer and vehicular mayhem where players control rocket-powered cars to score goals.",
+    "image": "images/game-images/rocket-league.webp"
+  },
+  {
+    "name": "Burnout Paradise Remastered",
+    "platforms": "PC, PlayStation 4, Xbox One, Nintendo Switch",
+    "cost": "$19.99",
+    "description": "An open-world arcade racer with high-speed stunts and explosive crashes in Paradise City.",
+    "image": "images/game-images/burnout-paradise-remastered.webp"
+  },
+  {
+    "name": "F1 24",
+    "platforms": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X | S",
+    "cost": "$69.99",
+    "description": "The official Formula 1 racing simulation featuring all teams, drivers, and circuits from the 2024 season.",
+    "image": "images/game-images/f1-24.webp"
+  },
+  {
+    "name": "Forza Horizon 5",
+    "platforms": "PC, Xbox One, Xbox Series X | S, PlayStation 5",
+    "cost": "$59.99",
+    "description": "An open-world racing adventure set in Mexico with dynamic seasons and hundreds of cars.",
+    "image": "images/game-images/forza-horizon-5.webp"
+  },
+  {
+    "name": "Forza Motorsport",
+    "platforms": "PC, Xbox Series X | S",
+    "cost": "$69.99",
+    "description": "A simulation-focused racing experience with over 500 cars and 30 tracks, built for realism.",
+    "image": "images/game-images/forza-motorsport.webp"
+  },
+  {
+    "name": "Gran Turismo 7",
+    "platforms": "PlayStation 4, PlayStation 5",
+    "cost": "$69.99",
+    "description": "A premier racing simulator with over 400 cars and 90 tracks, offering stunning realism and depth.",
+    "image": "images/game-images/gran-turismo-7.webp"
+  },
+  {
+    "name": "GTA Online",
+    "platforms": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X | S",
+    "cost": "Free with GTA V",
+    "description": "An expansive online world with racing modes, custom vehicles, and chaotic multiplayer action.",
+    "image": "images/game-images/gta-online.webp"
+  },
+  {
+    "name": "iRacing",
+    "platforms": "PC",
+    "cost": "$13/month subscription",
+    "description": "A professional-grade racing simulator with laser-scanned tracks and competitive online leagues.",
+    "image": "images/game-images/iracing.webp"
+  },
+  {
+    "name": "Lego 2K Drive",
+    "platforms": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X | S, Nintendo Switch",
+    "cost": "$59.99",
+    "description": "A creative racing game with customizable Lego vehicles and open-world exploration.",
+    "image": "images/game-images/lego-2k-drive.webp"
+  },
+  {
+    "name": "Mario Kart 8 Deluxe",
+    "platforms": "Nintendo Switch",
+    "cost": "$59.99",
+    "description": "A definitive kart racing experience with classic tracks, characters, and chaotic multiplayer fun.",
+    "image": "images/game-images/mario-kart-8-deluxe.webp"
+  },
+  {
+    "name": "Need for Speed Unbound",
+    "platforms": "PC, PlayStation 5, Xbox Series X | S, Amazon Luna",
+    "cost": "$59.99",
+    "description": "A stylish street racing game with cel-shaded visuals, cop chases, and deep car customization.",
+    "image": "images/game-images/need-for-speed-unbound.webp"
+  },
+  {
+    "name": "The Crew Motorfest",
+    "platforms": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X | S, Amazon Luna",
+    "cost": "$69.99",
+    "description": "An open-world racing festival set in Hawaii, featuring diverse vehicles and multiplayer events.",
+    "image": "images/game-images/the-crew-motorfest.jpg"
+  }
+]

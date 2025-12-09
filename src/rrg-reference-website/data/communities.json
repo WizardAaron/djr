@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Trackmania Discord",
+    "platforms": ["Discord"],
+    "link": "https://discord.gg/trackmania",
+    "description": "Join thousands of players sharing custom tracks, replays, and racing tips.",
+    "background": "images/game-images/trackmania.jpg"
+  },
+  {
+    "name": "Sonic Racing: CrossWorlds",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/sonicracingcrossworlds",
+    "description": "Host races, chat with friends, and join tournaments in this dedicated Sonic racing hub.",
+    "background": "images/game-images/sonic-racing-crossworlds.webp"
+  },
+  {
+    "name": "Mario Kart World",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/HNnMhE53zj",
+    "description": "Compete in open-world races and knockout modes with fellow Mario Kart World players.",
+    "background": "images/game-images/mario-kart-world.webp"
+  },
+  {
+    "name": "Rocket League Official",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/rocketleague",
+    "description": "The official Rocket League server with esports, car customization, and LFG channels.",
+    "background": "images/game-images/rocket-league.webp"
+  },
+  {
+    "name": "Burnout Paradise Remastered",
+    "platforms": ["Discord"],
+    "link": "https://discord.gg/keWPKXh",
+    "description": "Join Freeburn sessions, modding discussions, and Paradise events with other Burnout fans.",
+    "background": "images/game-images/burnout-paradise-remastered.webp"
+  },
+  {
+    "name": "F1 Sim Racing / Esports",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/KgsBfGK56m",
+    "description": "Official server for F1 Esports and sim racing leagues. Watch, race, and compete.",
+    "background": "images/game-images/f1-24.webp"
+  },
+  {
+    "name": "Forza Horizon Community",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/forzahorizon",
+    "description": "Join convoys, car meets, and tuning discussions in this Horizon 5-focused community.",
+    "background": "images/game-images/forza-horizon-5.webp"
+  },
+  {
+    "name": "Forza Motorsport Official",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/forza",
+    "description": "The official Discord for Forza Motorsport and Horizon players. Events, builds, and more.",
+    "background": "images/game-images/forza-motorsport.webp"
+  },
+  {
+    "name": "Gran Turismo Hub",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/granturismo",
+    "description": "Discuss GT7, share liveries, and join World Series watch parties with fellow racers.",
+    "background": "images/game-images/gran-turismo-7.webp"
+  },
+  {
+    "name": "GTA Online Community",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/gtao",
+    "description": "Find players for heists, car meets, and freemode chaos in the largest GTA Online server.",
+    "background": "images/game-images/gta-online.webp"
+  },
+  {
+    "name": "iRacing Community",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/2QcknvStSx",
+    "description": "Unofficial but active iRacing hub for setups, series, and competitive sim racing.",
+    "background": "images/game-images/iracing.webp"
+  },
+  {
+    "name": "LEGO 2K Drive Unofficial",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/lego",
+    "description": "Join the largest LEGO gaming server with channels for 2K Drive, creations, and bug reports.",
+    "background": "images/game-images/lego-2k-drive.webp"
+  },
+  {
+    "name": "Mario Kart 8 Deluxe",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/W6GYNKBK3H",
+    "description": "Tournaments, friend rooms, and daily challenges for MK8D players across all regions.",
+    "background": "images/game-images/mario-kart-8-deluxe.webp"
+  },
+  {
+    "name": "Need for Speed Unbound",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/NeedForSpeed",
+    "description": "Official NFS server for Unbound and other titles. Share rides, race, and mod together.",
+    "background": "images/game-images/need-for-speed-unbound.webp"
+  },
+  {
+    "name": "The Crew Motorfest",
+    "platforms": ["Discord"],
+    "link": "https://discord.com/invite/thecrew",
+    "description": "Join the Crew Motorfest community for LFG, car showcases, and high-octane events.",
+    "background": "images/game-images/the-crew-motorfest.jpg"
+  },
+  {
+    "name": "r/RacingGames",
+    "platforms": ["Reddit"],
+    "link": "https://www.reddit.com/r/RacingGames/",
+    "description": "A hub for all racing game fans — from arcade to sim.",
+    "background": "images/game-images/trackmania.jpg"
+  },
+  {
+    "name": "GTPlanet Forums",
+    "platforms": ["Forum"],
+    "link": "https://www.gtplanet.net/forum/",
+    "description": "Gran Turismo and sim racing community with deep tuning guides and event coverage.",
+    "background": "images/game-images/gran-turismo-7.webp"
+  },
+  {
+    "name": "Yellow Flag Racers",
+    "platforms": ["Discord"],
+    "link": "https://disboard.org/servers/tag/racing-games",
+    "description": "General racing game server for motorsport fans, sim racers, and car enthusiasts.",
+    "background": "images/game-images/forza-motorsport.webp"
+  }
+]

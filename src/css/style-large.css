@@ -1,0 +1,165 @@
+/* Digital Jam Radio - Large Screen Styles */
+/* Media Query for screens 645px and larger */
+
+@media only screen and (min-width: 40.3rem) {
+    header, main, nav, footer {
+        margin: 0 auto;
+    }
+
+    /*********************************** HEADER ***********************************/
+
+    header {
+        text-align: left;
+        grid-template-columns: 80px auto;
+    }
+
+    .djr-logo {
+        width: 80px;
+        height: 80px;
+        padding: 5px 0 5px 5px;
+    }
+    
+    .djr-header-title {
+        font-size: 2rem;
+        padding: 0.5rem 0.5rem 0.5rem 2rem;
+    }
+
+    /***************************** HAMBURGER & NAVIGATION *****************************/
+
+    .hamburger {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+    }
+
+    .navigation ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background-color: var(--glaucous);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+    
+    .navigation a {
+        display: block;
+        color: var(--text-white);
+        text-align: center;
+        text-decoration: none;
+        padding: 1rem;
+        border-right: var(--border1);
+        border-left: var(--border1);
+    }
+
+    /*********************************** FOOTER ***********************************/
+
+    footer {
+        background-color: var(--glaucous);
+        color: var(--text-white);
+        padding: 1rem 2rem;
+        border-top: var(--border1);
+        font-size: 0.9rem;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer-left,
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .footer-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer .social {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    footer .social a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        border: var(--border2);
+        border-radius: var(--border-radius2);
+    }
+
+    footer .social img {
+        width: 24px;
+        height: 24px;
+    }
+
+    footer .social a:hover {
+        background-color: var(--sky-aqua);
+    }
+
+    /************************************ MAIN ************************************/
+
+    main section h2 {
+        text-align: left;
+    }
+
+    body.home main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    body.home main h1 {
+        grid-column: span 4;
+        margin: 0;
+        padding-bottom: 1rem;
+    }
+
+    /* First section (About Digital Jam Radio) spans full width */
+    body.home main > section:nth-of-type(1) {
+        grid-column: span 4;
+    }
+
+    /* Second section (Transform Your Music) spans 2 columns on the right */
+    body.home main > section:nth-of-type(2) {
+        grid-column: span 2;
+    }
+
+    /* Third section (Discover & Search) spans 2 columns on the left */
+    body.home main > section:nth-of-type(3) {
+        grid-column: span 2;
+        grid-row: 3;
+    }
+
+    /* Fourth section (Features) spans full width */
+    body.home main > section:nth-of-type(4) {
+        grid-column: span 4;
+    }
+
+    /**************************** HERO IMAGE DESKTOP ****************************/
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    .hero-button {
+        bottom: 3rem;
+    }
+
+    .cta-button {
+        font-size: 1.4rem;
+        padding: 1.2rem 2.5rem;
+    }
+}

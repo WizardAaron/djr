@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Radical Racing Games home page. Discover racing games and car games you are sure to enjoy!">
+    <meta name="author" content="Ethan Long">
+    <title>Wireframes: Radical Racing Games</title>
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Radical Racing Games Home">
+    <meta property="og:description" content="Explore a wide variety of racing games featured on Radical Racing Games.">
+    <meta property="og:image" content="https://wizardaaron.github.io/wdd231/radicalracinggames/images/rrg-logo.svg">
+    <meta property="og:url" content="https://wizardaaron.github.io/wdd231/radicalracinggames/">
+    <meta property="og:type" content="website">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="facebook:title" content="Radical Racing Games Home">
+    <meta property="facebook:description" content="Connecting online racers and establishing connections amongst gamers worldwide.">
+    <meta property="facebook:image" content="images/favicon.ico">
+    <meta property="facebook:url" content="https://WizardAaron.github.io/wdd231/radicalracinggames/index.html">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Scripts -->
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script> 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/rrg-favicon.ico">
+</head>
+<body class="wireframes-body">
+    <header>
+        <img src="images/rrg-logo.svg" alt="Site Logo" width="512" height="512">
+        <p><span>Radical Racing Games</span></p>
+        <button id="ham-menu" class="hamburger" title="Open navigation menu" aria-label="Open navigation menu"></button>
+    </header>
+    <nav id="nav-bar" class="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="communities.html">Communities</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <h2 class="visually-hidden">Welcome to Radical Racing Games</h2>
+        <picture>
+            <source srcset="images/hero-image-desktop-rrg.jpg" media="(min-width: 768px)">
+            <img src="images/hero-image-mobile-rrg.jpg" alt="Radical Racing Games Hero Image">
+        </picture>
+        <div class="hero-button">
+            <a href="#" class="cta-button">Keynote Tickets</a>
+        </div>
+    </section>
+    <main>
+        <h1>Wireframes: Radical Racing Games</h1>
+        <section class="wireframes">
+          <h2>Mobile Wireframe</h2>
+          <img src="images/rrg-wireframe-mobile.jpg" alt="Mobile Wireframe" width="700" height="auto">
+        </section>
+        <section class="wireframes">
+          <h2>Desktop Wireframe</h2>
+          <img src="images/rrg-wireframe-desktop.jpg" alt="Desktop Wireframe" width="700" height="auto">
+        </section>
+    </main>
+    <footer>
+        <div class="footer-left">
+            <p>Radical Racing Games</p>
+            <a href="attributions.html">Attributions</a>
+            <p>rrgreal@radicalracinggames.org</p>
+            <p>(000) 123-4567</p>
+        </div>
+
+        <div class="footer-center">
+            <div class="social">
+                <a href="https://youtube.com" target="_blank"><img src="images/youtube-icon.svg" alt="YouTube" width="24" height="24"></a>
+                <a href="https://x.com" target="_blank"><img src="images/twitter-x-icon.svg" alt="Twitter / X" width="24" height="24"></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin-icon.svg" alt="LinkedIn" width="24" height="24"></a>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <p>WDD 231 Class Project</p>
+            <p>Created by Ethan Long</p>
+            <p>&copy; <span id="year"></span> Radical Racing Games</p>
+            <p id="lastModified">Last Modification: <span id="short"></span></p>
+        </div>
+    </footer>
+</body>
+</html>
