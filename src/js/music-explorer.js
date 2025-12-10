@@ -35,15 +35,15 @@ async function init() {
     hideLoading();
     
     if (result.success) {
-      await displayUserInfo();
       showSearchInterface();
+      await displayUserInfo();
     } else {
       showError('Authentication failed. Please try again.');
     }
   } else if (isAuthenticated()) {
     // User is already authenticated
-    await displayUserInfo();
     showSearchInterface();
+    await displayUserInfo();
   } else {
     // Show login button
     showLoginInterface();
