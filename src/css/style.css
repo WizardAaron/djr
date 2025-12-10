@@ -391,6 +391,7 @@ footer .social {
   padding: 1rem;
   background-color: var(--glaucous);
   border-radius: var(--border-radius-half);
+  border: 1px solid var(--sky-aqua);
   margin: 1rem;
 }
 
