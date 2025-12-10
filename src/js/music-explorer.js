@@ -12,7 +12,7 @@ import {
 } from './spotify-api.js';
 
 // MOCK MODE - Set to true to bypass authentication for UI testing
-const MOCK_AUTH = true;
+const MOCK_AUTH = false;
 
 // Initialize page
 async function init() {
