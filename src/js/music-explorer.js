@@ -164,10 +164,12 @@ function displaySearchResults(tracks) {
   
   // Debug: Log tracks to see preview_url availability
   console.log('Tracks with preview URLs:', tracks.filter(t => t.preview_url).length, '/', tracks.length);
-  tracks.forEach(track => {
-    if (track.preview_url) {
-      console.log('Preview available:', track.name, track.preview_url);
-    }
+  console.log('Full track data for first track:', tracks[0]);
+  tracks.forEach((track, index) => {
+    console.log(`Track ${index + 1}: "${track.name}" by ${track.artists[0].name}`);
+    console.log('  - Preview URL:', track.preview_url || 'NONE');
+    console.log('  - Available markets:', track.available_markets?.length || 0);
+    console.log('  - Is playable:', track.is_playable);
   });
   
   const trackHTML = tracks.map(track => `
