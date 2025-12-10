@@ -165,6 +165,10 @@
     
     /*************************** MUSIC EXPLORER STYLES ***************************/
 
+    .track-item {
+      grid-template-columns: 160px 1fr auto;
+    }
+
     .track-image {
       width: 160px;
       height: 160px;
