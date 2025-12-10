@@ -165,6 +165,11 @@ function displaySearchResults(tracks) {
   // Debug: Log tracks to see preview_url availability
   console.log('Tracks with preview URLs:', tracks.filter(t => t.preview_url).length, '/', tracks.length);
   console.log('Full track data for first track:', tracks[0]);
+  console.log('ALL keys in first track object:', Object.keys(tracks[0]));
+  console.log('Does preview_url exist?', 'preview_url' in tracks[0]);
+  console.log('Type of preview_url:', typeof tracks[0].preview_url);
+  console.log('Value of preview_url:', tracks[0].preview_url);
+  
   tracks.forEach((track, index) => {
     console.log(`Track ${index + 1}: "${track.name}" by ${track.artists[0].name}`);
     console.log('  - Preview URL:', track.preview_url || 'NONE');
