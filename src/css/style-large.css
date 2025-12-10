@@ -162,4 +162,14 @@
         font-size: 1.4rem;
         padding: 1.2rem 2.5rem;
     }
+    
+    /*************************** MUSIC EXPLORER STYLES ***************************/
+
+    .track-image {
+      width: 160px;
+      height: 160px;
+      border-radius: var(--border-radius-quarter);
+      border: var(--border1);
+    }
+
 }
