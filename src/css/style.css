@@ -518,6 +518,67 @@ footer .social {
   display: none;
 }
 
+/*************************** AUDIO PLAYGROUND STYLES ***************************/
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: inline-block;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.file-name {
+  margin: 1rem 0;
+  color: var(--sky-aqua);
+  font-style: italic;
+}
+
+#audio-player {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.player-controls {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-control {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--glaucous);
+  border: var(--border1);
+  border-radius: var(--border-radius-half);
+}
+
+.filter-control label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+}
+
+.filter-control input[type="range"] {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.filter-control span {
+  display: inline-block;
+  margin-left: 1rem;
+  color: var(--sky-aqua);
+  font-weight: bold;
+}
+
+#reset-filters {
+  margin-top: 2rem;
+}
+
 /******************************** OLD STYLES TO REMOVE LATER ********************************/
 
 #checkout-form {

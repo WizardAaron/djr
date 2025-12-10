@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/style-large.css">
     
     <!-- Scripts -->
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/audio-playground.js" type="module"></script>
 
     <!-- Favicon -->
     <link rel="icon" href="../images/logos/djr-logo.ico">
@@ -34,15 +34,63 @@
     <main>
       <h1>Audio Playground</h1>
       
-      <section class="audio-controls">
-        <h2>Audio Effects</h2>
-        <p>Apply various audio filters and effects to transform your music experience.</p>
-        <p><em>This feature is coming soon!</em></p>
+      <section class="upload-section">
+        <h2>Upload Audio</h2>
+        <input type="file" id="audio-file" accept="audio/*" class="file-input">
+        <label for="audio-file" class="file-label cta-button">Choose Audio File</label>
+        <p id="file-name" class="file-name"></p>
       </section>
 
-      <section class="player-section">
+      <section class="player-section hidden" id="player-section">
         <h2>Audio Player</h2>
-        <p>Your audio player will appear here.</p>
+        <audio id="audio-player" controls></audio>
+        <div class="player-controls">
+          <button id="play-btn" class="btn-secondary">Play</button>
+          <button id="pause-btn" class="btn-secondary">Pause</button>
+          <button id="stop-btn" class="btn-secondary">Stop</button>
+        </div>
+      </section>
+
+      <section class="filters-section hidden" id="filters-section">
+        <h2>Audio Effects</h2>
+        
+        <div class="filter-control">
+          <label for="volume-slider">Volume</label>
+          <input type="range" id="volume-slider" min="0" max="2" step="0.1" value="1">
+          <span id="volume-value">100%</span>
+        </div>
+
+        <div class="filter-control">
+          <label for="bass-slider">Bass Boost</label>
+          <input type="range" id="bass-slider" min="0" max="20" step="1" value="0">
+          <span id="bass-value">0 dB</span>
+        </div>
+
+        <div class="filter-control">
+          <label for="treble-slider">Treble</label>
+          <input type="range" id="treble-slider" min="-20" max="20" step="1" value="0">
+          <span id="treble-value">0 dB</span>
+        </div>
+
+        <div class="filter-control">
+          <label for="reverb-slider">Reverb</label>
+          <input type="range" id="reverb-slider" min="0" max="1" step="0.1" value="0">
+          <span id="reverb-value">0%</span>
+        </div>
+
+        <div class="filter-control">
+          <label for="echo-slider">Echo Delay</label>
+          <input type="range" id="echo-slider" min="0" max="1" step="0.1" value="0">
+          <span id="echo-value">0s</span>
+        </div>
+
+        <div class="filter-control">
+          <label for="echo-feedback-slider">Echo Feedback</label>
+          <input type="range" id="echo-feedback-slider" min="0" max="0.9" step="0.1" value="0">
+          <span id="echo-feedback-value">0%</span>
+        </div>
+
+        <button id="reset-filters" class="cta-button">Reset All Filters</button>
       </section>
     </main>
 
