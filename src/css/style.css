@@ -227,7 +227,7 @@ header {
   transition: all 0.3s ease;
 }
 
-.search-section .cta-button {
+.search-section > .cta-button {
   margin-bottom: 1rem;
 }
 
@@ -359,8 +359,8 @@ footer .social {
 
 #search-form {
   display: flex;
-  gap: 0.5rem;
-  margin: 1rem 0;
+  gap: 1rem;
+  margin: 1rem 1rem;
 }
 
 #search-input {
@@ -374,9 +374,14 @@ footer .social {
   font-family: var(--text-font);
 }
 
+#search-input > .cta-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
 #search-input:focus {
   outline: none;
-  border-color: var(--sky-aqua);
+  border-color: var(--grape-soda);
 }
 
 .user-profile {

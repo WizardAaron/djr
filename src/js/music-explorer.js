@@ -11,10 +11,21 @@ import {
   searchTracks 
 } from './spotify-api.js';
 
+// MOCK MODE - Set to true to bypass authentication for UI testing
+const MOCK_AUTH = true;
+
 // Initialize page
 async function init() {
   // Load header and footer
   await loadHeaderFooter();
+  
+  // Mock authentication for testing
+  if (MOCK_AUTH) {
+    showSearchInterface();
+    displayMockUserInfo();
+    setupEventListeners();
+    return;
+  }
   
   // Check for callback from Spotify
   const urlParams = new URLSearchParams(window.location.search);
@@ -40,6 +51,19 @@ async function init() {
   
   // Set up event listeners
   setupEventListeners();
+}
+
+// Display mock user info for testing
+function displayMockUserInfo() {
+  const userInfoDiv = document.getElementById('user-info');
+  if (userInfoDiv) {
+    userInfoDiv.innerHTML = `
+      <div class="user-profile">
+        <span>Welcome, Test User! (Mock Mode)</span>
+        <button id="logout-btn" class="btn-secondary" disabled>Logout (Mock)</button>
+      </div>
+    `;
+  }
 }
 
 // Display user info
