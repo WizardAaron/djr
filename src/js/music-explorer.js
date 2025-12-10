@@ -141,6 +141,18 @@ async function performSearch(query) {
   
   try {
     const results = await searchTracks(query);
+    
+    // TEST: Try fetching the first track individually to see if it has preview_url
+    if (results.tracks.items.length > 0) {
+      const { getTrack } = await import('./spotify-api.js');
+      const firstTrackId = results.tracks.items[0].id;
+      const fullTrackData = await getTrack(firstTrackId);
+      console.log('=== TESTING: Full track data from Get Track endpoint ===');
+      console.log('Track:', fullTrackData.name);
+      console.log('Preview URL from Get Track:', fullTrackData.preview_url);
+      console.log('Preview URL from Search:', results.tracks.items[0].preview_url);
+    }
+    
     displaySearchResults(results.tracks.items);
   } catch (error) {
     console.error('Search failed:', error);
