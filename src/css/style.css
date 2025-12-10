@@ -216,7 +216,6 @@ header {
 .cta-button {
   display: inline-block;
   padding: 1rem 2rem;
-  margin-bottom: 1rem;
   background-color: var(--glaucous);
   color: var(--text-white);
   text-decoration: none;
@@ -226,6 +225,10 @@ header {
   border-radius: var(--border-radius);
   border: var(--border2);
   transition: all 0.3s ease;
+}
+
+.search-section .cta-button {
+  margin-bottom: 1rem;
 }
 
 .cta-button:hover {
