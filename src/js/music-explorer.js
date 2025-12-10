@@ -102,7 +102,7 @@ function showSearchInterface() {
     <div id="user-info"></div>
     <form id="search-form">
       <input type="text" id="search-input" placeholder="Search for a song, artist, or album..." required>
-      <button type="submit" class="cta-button">Search</button>
+      <button type="submit" id="search-btn" class="cta-button"><span class="btn-text">Search</span><span class="btn-icon">🔍</span></button>
     </form>
     <div id="loading" class="loading hidden">Searching...</div>
     <div id="error-message" class="error-message hidden"></div>
