@@ -520,6 +520,28 @@ footer .social {
 
 /*************************** AUDIO PLAYGROUND STYLES ***************************/
 
+.upload-section {
+  text-align: center;
+}
+
+.filters-section > .filter-control {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.filters-section > #reset-filters {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: var(--glaucous);
+  color: var(--text-white);
+  border: var(--border1);
+  border-radius: var(--border-radius-half);
+  cursor: pointer;
+  font-family: var(--text-font);
+  transition: background-color 0.3s ease;
+}
+
 .file-input {
   display: none;
 }
@@ -537,15 +559,21 @@ footer .social {
 }
 
 #audio-player {
-  width: 100%;
-  margin: 1rem 0;
+  width: calc(100% - 2rem);
+  margin: 1rem;
 }
 
 .player-controls {
   display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0rem;
+  margin: 0 0 1.5rem 0;
   flex-wrap: wrap;
+}
+
+.player-controls > .btn-secondary {
+  padding: 1.1rem 2rem;
 }
 
 .filter-control {

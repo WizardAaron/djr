@@ -24,12 +24,14 @@ function setupEventListeners() {
   const playBtn = document.getElementById('play-btn');
   const pauseBtn = document.getElementById('pause-btn');
   const stopBtn = document.getElementById('stop-btn');
+  const downloadBtn = document.getElementById('download-btn');
   const resetBtn = document.getElementById('reset-filters');
 
   fileInput.addEventListener('change', handleFileUpload);
   playBtn.addEventListener('click', playAudio);
   pauseBtn.addEventListener('click', pauseAudio);
   stopBtn.addEventListener('click', stopAudio);
+  downloadBtn.addEventListener('click', downloadProcessedAudio);
   resetBtn.addEventListener('click', resetFilters);
 
   // Filter sliders
@@ -167,6 +169,162 @@ function stopAudio() {
     audioElement.currentTime = 0;
     isPlaying = false;
   }
+}
+
+// Download processed audio
+async function downloadProcessedAudio() {
+  if (!audioElement || !audioContext) {
+    alert('Please upload an audio file first!');
+    return;
+  }
+
+  // Pause current playback
+  const wasPlaying = !audioElement.paused;
+  pauseAudio();
+
+  try {
+    // Create offline context for rendering
+    const offlineContext = new OfflineAudioContext(
+      2, // stereo
+      audioContext.sampleRate * audioElement.duration,
+      audioContext.sampleRate
+    );
+
+    // Fetch the audio file and decode it
+    const response = await fetch(audioElement.src);
+    const arrayBuffer = await response.arrayBuffer();
+    const audioBuffer = await offlineContext.decodeAudioData(arrayBuffer);
+
+    // Create source from buffer
+    const source = offlineContext.createBufferSource();
+    source.buffer = audioBuffer;
+
+    // Recreate all effects in offline context
+    const offlineGain = offlineContext.createGain();
+    offlineGain.gain.value = gainNode.gain.value;
+
+    const offlineBass = offlineContext.createBiquadFilter();
+    offlineBass.type = 'lowshelf';
+    offlineBass.frequency.value = 200;
+    offlineBass.gain.value = bassFilter.gain.value;
+
+    const offlineTreble = offlineContext.createBiquadFilter();
+    offlineTreble.type = 'highshelf';
+    offlineTreble.frequency.value = 3000;
+    offlineTreble.gain.value = trebleFilter.gain.value;
+
+    const offlineConvolver = offlineContext.createConvolver();
+    offlineConvolver.buffer = convolver.buffer;
+
+    const offlineDelay = offlineContext.createDelay(2.0);
+    offlineDelay.delayTime.value = delayNode.delayTime.value;
+
+    const offlineFeedback = offlineContext.createGain();
+    offlineFeedback.gain.value = feedbackGain.gain.value;
+
+    // Recreate dry/wet mix
+    const dryGain = offlineContext.createGain();
+    const wetGain = offlineContext.createGain();
+    dryGain.gain.value = 1;
+    wetGain.gain.value = window.reverbWetGain ? window.reverbWetGain.gain.value : 0;
+
+    // Connect nodes
+    source.connect(offlineBass);
+    offlineBass.connect(offlineTreble);
+    offlineTreble.connect(offlineGain);
+
+    offlineGain.connect(offlineDelay);
+    offlineDelay.connect(offlineFeedback);
+    offlineFeedback.connect(offlineDelay);
+
+    offlineGain.connect(dryGain);
+    offlineGain.connect(offlineConvolver);
+    offlineConvolver.connect(wetGain);
+
+    dryGain.connect(offlineContext.destination);
+    wetGain.connect(offlineContext.destination);
+    offlineDelay.connect(offlineContext.destination);
+
+    // Start rendering
+    source.start();
+    const renderedBuffer = await offlineContext.startRendering();
+
+    // Convert to WAV and download
+    const wav = audioBufferToWav(renderedBuffer);
+    const blob = new Blob([wav], { type: 'audio/wav' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'processed-audio.wav';
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+    // Resume playback if it was playing
+    if (wasPlaying) {
+      playAudio();
+    }
+  } catch (error) {
+    console.error('Error downloading audio:', error);
+    alert('Failed to download audio. Please try again.');
+  }
+}
+
+// Convert AudioBuffer to WAV format
+function audioBufferToWav(buffer) {
+  const length = buffer.length * buffer.numberOfChannels * 2 + 44;
+  const arrayBuffer = new ArrayBuffer(length);
+  const view = new DataView(arrayBuffer);
+  const channels = [];
+  let offset = 0;
+  let pos = 0;
+
+  // Write WAV header
+  const setUint16 = (data) => {
+    view.setUint16(pos, data, true);
+    pos += 2;
+  };
+  const setUint32 = (data) => {
+    view.setUint32(pos, data, true);
+    pos += 4;
+  };
+
+  // "RIFF" chunk descriptor
+  setUint32(0x46464952); // "RIFF"
+  setUint32(length - 8); // file length - 8
+  setUint32(0x45564157); // "WAVE"
+
+  // "fmt " sub-chunk
+  setUint32(0x20746d66); // "fmt "
+  setUint32(16); // subchunk size
+  setUint16(1); // audio format (1 = PCM)
+  setUint16(buffer.numberOfChannels);
+  setUint32(buffer.sampleRate);
+  setUint32(buffer.sampleRate * buffer.numberOfChannels * 2); // byte rate
+  setUint16(buffer.numberOfChannels * 2); // block align
+  setUint16(16); // bits per sample
+
+  // "data" sub-chunk
+  setUint32(0x61746164); // "data"
+  setUint32(length - pos - 4); // chunk size
+
+  // Write interleaved audio data
+  for (let i = 0; i < buffer.numberOfChannels; i++) {
+    channels.push(buffer.getChannelData(i));
+  }
+
+  while (pos < length) {
+    for (let i = 0; i < buffer.numberOfChannels; i++) {
+      let sample = Math.max(-1, Math.min(1, channels[i][offset]));
+      sample = sample < 0 ? sample * 0x8000 : sample * 0x7fff;
+      view.setInt16(pos, sample, true);
+      pos += 2;
+    }
+    offset++;
+  }
+
+  return arrayBuffer;
 }
 
 // Filter updates
