@@ -426,13 +426,14 @@ footer .social {
 
 .track-item {
   display: grid;
-  grid-template-columns: 80px 1fr auto;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: auto auto;
   gap: 1rem;
   padding: 1rem;
   background-color: var(--glaucous);
   border: var(--border1);
   border-radius: var(--border-radius-half);
-  align-items: center;
+  align-items: start;
 }
 
 .track-image {
@@ -441,6 +442,11 @@ footer .social {
   object-fit: cover;
   border-radius: var(--border-radius-quarter);
   border: var(--border1);
+  grid-row: 1 / 2;
+}
+
+.track-info {
+  grid-row: 1 / 2;
 }
 
 .track-info h3 {
@@ -456,8 +462,11 @@ footer .social {
 }
 
 .track-actions {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 1rem;
 }
 

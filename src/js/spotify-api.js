@@ -40,8 +40,8 @@ export async function searchTracks(query, limit = 20) {
   const params = new URLSearchParams({
     q: query,
     type: 'track',
-    limit: limit,
-    market: 'from_token'  // Use user's market for preview URL availability
+    limit: limit
+    // Removed market parameter - let Spotify return all available data
   });
   
   return spotifyFetch(`/search?${params.toString()}`);

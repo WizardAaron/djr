@@ -181,6 +181,8 @@
 
     .track-item {
       grid-template-columns: 160px 1fr auto;
+      grid-template-rows: auto;
+      align-items: center;
     }
 
     .track-image {
@@ -189,6 +191,18 @@
       object-fit: cover;
       border-radius: var(--border-radius-quarter);
       border: var(--border1);
+      grid-row: auto;
+    }
+
+    .track-info {
+      grid-row: auto;
+    }
+
+    .track-actions {
+      grid-column: auto;
+      grid-row: auto;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
 }
