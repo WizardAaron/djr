@@ -168,6 +168,7 @@
     .track-image {
       width: 160px;
       height: 160px;
+      object-fit: cover;
       border-radius: var(--border-radius-quarter);
       border: var(--border1);
     }

@@ -162,6 +162,14 @@ function displaySearchResults(tracks) {
     return;
   }
   
+  // Debug: Log tracks to see preview_url availability
+  console.log('Tracks with preview URLs:', tracks.filter(t => t.preview_url).length, '/', tracks.length);
+  tracks.forEach(track => {
+    if (track.preview_url) {
+      console.log('Preview available:', track.name, track.preview_url);
+    }
+  });
+  
   const trackHTML = tracks.map(track => `
     <div class="track-item" data-track-id="${track.id}">
       <img src="${track.album.images[2]?.url || track.album.images[0]?.url}" alt="${track.name}" class="track-image">

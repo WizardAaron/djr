@@ -437,6 +437,7 @@ footer .social {
 .track-image {
   width: 80px;
   height: 80px;
+  object-fit: cover;
   border-radius: var(--border-radius-quarter);
   border: var(--border1);
 }
