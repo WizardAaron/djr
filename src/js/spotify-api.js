@@ -41,7 +41,7 @@ export async function searchTracks(query, limit = 20) {
     q: query,
     type: 'track',
     limit: limit,
-    market: 'US'  // Specify market for preview URL availability
+    market: 'from_token'  // Use user's market for preview URL availability
   });
   
   return spotifyFetch(`/search?${params.toString()}`);
