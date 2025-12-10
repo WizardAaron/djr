@@ -391,7 +391,7 @@ footer .social {
   padding: 1rem;
   background-color: var(--glaucous);
   border-radius: var(--border-radius-half);
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 .user-avatar {
@@ -462,7 +462,7 @@ footer .social {
 
 .btn-play,
 .btn-save {
-  padding: 1.5rem 3rem;
+  padding: 0.5rem 1rem;
   background-color: var(--deep-purple);
   color: var(--text-white);
   border: var(--border1);

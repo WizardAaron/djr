@@ -165,6 +165,19 @@
     
     /*************************** MUSIC EXPLORER STYLES ***************************/
 
+    .btn-play,
+    .btn-save {
+      padding: 1.5rem 3rem;
+      background-color: var(--deep-purple);
+      color: var(--text-white);
+      border: var(--border1);
+      border-radius: var(--border-radius-half);
+      cursor: pointer;
+      font-family: var(--text-font);
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+    }
+
     .track-item {
       grid-template-columns: 160px 1fr auto;
     }
