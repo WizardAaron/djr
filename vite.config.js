@@ -1,19 +1,27 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+//maybe comment out line beneath this one
+import basicSsl from '@vitejs/plugin-basic-ssl';
 
 export default defineConfig({
   root: "src/",
+//Maybe Comment out from here
+  plugins: [basicSsl()],
+
+  server: {
+    https: true,
+    port: 5173,
+  },
+// to here
 
   build: {
     outDir: "../dist",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
-        cart: resolve(__dirname, "src/cart/index.html"),
-        checkout: resolve(__dirname, "src/checkout/index.html"),
-        success: resolve(__dirname, "src/checkout/success.html"),
-        product: resolve(__dirname, "src/product_pages/index.html"),
-        product_listing: resolve(__dirname, "src/product_listing/index.html"),
+        musicExplorer: resolve(__dirname, "src/djr_music_explorer/index.html"),
+        audioPlayground: resolve(__dirname, "src/djr_audio_playground/index.html"),
+        contact: resolve(__dirname, "src/djr-contact-us/index.html"),
       },
     },
   },
