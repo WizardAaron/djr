@@ -55,38 +55,63 @@
       <section class="filters-section hidden" id="filters-section">
         <h2>Audio Effects</h2>
         
-        <div class="filter-control">
+        <div class="filter-control" data-effect-id="volume">
           <label for="volume-slider">Volume</label>
           <input type="range" id="volume-slider" min="0" max="2" step="0.1" value="1">
           <span id="volume-value">100%</span>
         </div>
 
-        <div class="filter-control">
-          <label for="bass-slider">Bass Boost</label>
+        <div class="filter-control" data-effect-id="bass">
+          <label for="bass-slider">
+            <div class="label-with-star">
+              <img src="../public/images/icons/empty-star.svg" class="favorite-star" data-effect="bass" alt="Favorite">
+              <span>Bass Boost</span>
+            </div>
+          </label>
           <input type="range" id="bass-slider" min="0" max="20" step="1" value="0">
           <span id="bass-value">0 dB</span>
         </div>
 
-        <div class="filter-control">
-          <label for="treble-slider">Treble</label>
+        <div class="filter-control" data-effect-id="treble">
+          <label for="treble-slider">
+            <div class="label-with-star">
+              <img src="../public/images/icons/empty-star.svg" class="favorite-star" data-effect="treble" alt="Favorite">
+              <span>Treble</span>
+            </div>
+          </label>
           <input type="range" id="treble-slider" min="-20" max="20" step="1" value="0">
           <span id="treble-value">0 dB</span>
         </div>
 
-        <div class="filter-control">
-          <label for="reverb-slider">Reverb</label>
+        <div class="filter-control" data-effect-id="reverb">
+          <label for="reverb-slider">
+            <div class="label-with-star">
+              <img src="../public/images/icons/empty-star.svg" class="favorite-star" data-effect="reverb" alt="Favorite">
+              <span>Reverb</span>
+            </div>
+          </label>
           <input type="range" id="reverb-slider" min="0" max="1" step="0.1" value="0">
           <span id="reverb-value">0%</span>
         </div>
 
-        <div class="filter-control">
-          <label for="echo-slider">Echo Delay</label>
+        <div class="filter-control" data-effect-id="echo">
+          <label for="echo-slider">
+            <div class="label-with-star">
+              <img src="../public/images/icons/empty-star.svg" class="favorite-star" data-effect="echo" alt="Favorite">
+              <span>Echo Delay</span>
+            </div>
+          </label>
           <input type="range" id="echo-slider" min="0" max="1" step="0.1" value="0">
           <span id="echo-value">0s</span>
         </div>
 
-        <div class="filter-control">
-          <label for="echo-feedback-slider">Echo Feedback</label>
+        <div class="filter-control" data-effect-id="echo-feedback">
+          <label for="echo-feedback-slider">
+            <div class="label-with-star">
+              <img src="../public/images/icons/empty-star.svg" class="favorite-star" data-effect="echo-feedback" alt="Favorite">
+              <span>Echo Feedback</span>
+            </div>
+          </label>
           <input type="range" id="echo-feedback-slider" min="0" max="0.9" step="0.1" value="0">
           <span id="echo-feedback-value">0%</span>
         </div>

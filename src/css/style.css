@@ -587,13 +587,37 @@ footer .social {
   background-color: var(--glaucous);
   border: var(--border1);
   border-radius: var(--border-radius-half);
+  text-align: left;
 }
 
 .filter-control label {
-  display: block;
+  display: flex;
+  align-items: center;
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: var(--text-white);
+}
+
+.filter-control .label-with-star {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-control .label-with-star span {
+  color: var(--text-white);
+}
+
+.favorite-star {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.favorite-star:hover {
+  transform: scale(1.2);
 }
 
 .filter-control input[type="range"] {

@@ -12,10 +12,15 @@ let feedbackGain;
 let audioElement;
 let isPlaying = false;
 
+// Favorites storage key
+const FAVORITES_KEY = 'djr-audio-favorites';
+
 // Initialize page
 async function init() {
   await loadHeaderFooter();
+  loadFavorites();
   setupEventListeners();
+  sortEffectsByFavorites();
 }
 
 // Set up event listeners
@@ -41,6 +46,11 @@ function setupEventListeners() {
   document.getElementById('reverb-slider').addEventListener('input', updateReverb);
   document.getElementById('echo-slider').addEventListener('input', updateEcho);
   document.getElementById('echo-feedback-slider').addEventListener('input', updateEchoFeedback);
+
+  // Favorite star click handlers
+  document.querySelectorAll('.favorite-star').forEach(star => {
+    star.addEventListener('click', toggleFavorite);
+  });
 }
 
 // Handle file upload
@@ -398,6 +408,81 @@ function resetFilters() {
   document.getElementById('reverb-value').textContent = '0%';
   document.getElementById('echo-value').textContent = '0s';
   document.getElementById('echo-feedback-value').textContent = '0%';
+}
+
+// ============= FAVORITES MANAGEMENT =============
+
+// Load favorites from localStorage
+function loadFavorites() {
+  const favorites = getFavorites();
+  favorites.forEach(effectId => {
+    const star = document.querySelector(`.favorite-star[data-effect="${effectId}"]`);
+    if (star) {
+      star.src = '../public/images/icons/yellow-star.svg';
+      star.classList.add('favorited');
+    }
+  });
+}
+
+// Get favorites array from localStorage
+function getFavorites() {
+  const stored = localStorage.getItem(FAVORITES_KEY);
+  return stored ? JSON.parse(stored) : [];
+}
+
+// Save favorites array to localStorage
+function saveFavorites(favorites) {
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+}
+
+// Toggle favorite status
+function toggleFavorite(event) {
+  const star = event.target;
+  const effectId = star.dataset.effect;
+  const favorites = getFavorites();
+  
+  if (favorites.includes(effectId)) {
+    // Remove from favorites
+    const index = favorites.indexOf(effectId);
+    favorites.splice(index, 1);
+    star.src = '../public/images/icons/empty-star.svg';
+    star.classList.remove('favorited');
+  } else {
+    // Add to favorites
+    favorites.push(effectId);
+    star.src = '../public/images/icons/yellow-star.svg';
+    star.classList.add('favorited');
+  }
+  
+  saveFavorites(favorites);
+  sortEffectsByFavorites();
+}
+
+// Sort effects by favorites (favorited ones go to top, after volume)
+function sortEffectsByFavorites() {
+  const filtersSection = document.getElementById('filters-section');
+  const volumeControl = document.querySelector('.filter-control[data-effect-id="volume"]');
+  const effectControls = Array.from(document.querySelectorAll('.filter-control[data-effect-id]'))
+    .filter(el => el.dataset.effectId !== 'volume'); // Exclude volume from sorting
+  const favorites = getFavorites();
+  
+  // Sort: favorited effects first, then non-favorited
+  effectControls.sort((a, b) => {
+    const aId = a.dataset.effectId;
+    const bId = b.dataset.effectId;
+    const aFav = favorites.includes(aId);
+    const bFav = favorites.includes(bId);
+    
+    if (aFav && !bFav) return -1;
+    if (!aFav && bFav) return 1;
+    return 0; // Maintain original order within same category
+  });
+  
+  // Re-insert in sorted order after volume control (volume stays at top)
+  const resetButton = document.getElementById('reset-filters');
+  effectControls.forEach(control => {
+    filtersSection.insertBefore(control, resetButton);
+  });
 }
 
 // Initialize on load
