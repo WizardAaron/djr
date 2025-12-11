@@ -12,6 +12,7 @@ export default defineConfig(({ command }) => {
           musicExplorer: resolve(__dirname, "src/djr_music_explorer/index.html"),
           audioPlayground: resolve(__dirname, "src/djr_audio_playground/index.html"),
           contact: resolve(__dirname, "src/djr-contact-us/index.html"),
+          contactSuccess: resolve(__dirname, "src/djr-contact-us/success.html"),
         },
       },
     },

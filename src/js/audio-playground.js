@@ -418,7 +418,7 @@ function loadFavorites() {
   favorites.forEach(effectId => {
     const star = document.querySelector(`.favorite-star[data-effect="${effectId}"]`);
     if (star) {
-      star.src = '../public/images/icons/yellow-star.svg';
+      star.src = '/images/icons/yellow-star.svg';
       star.classList.add('favorited');
     }
   });
@@ -445,12 +445,12 @@ function toggleFavorite(event) {
     // Remove from favorites
     const index = favorites.indexOf(effectId);
     favorites.splice(index, 1);
-    star.src = '../public/images/icons/empty-star.svg';
+    star.src = '/images/icons/empty-star.svg';
     star.classList.remove('favorited');
   } else {
     // Add to favorites
     favorites.push(effectId);
-    star.src = '../public/images/icons/yellow-star.svg';
+    star.src = '/images/icons/yellow-star.svg';
     star.classList.add('favorited');
   }
   
