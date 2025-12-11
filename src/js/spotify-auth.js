@@ -4,7 +4,7 @@
 const CLIENT_ID = '47c49405f2df4d1b8a154dc0cda5375b';
 const REDIRECT_URI = window.location.hostname === 'localhost' 
   ? 'https://localhost:5173/djr_music_explorer/'
-  : 'https://digitaljamradioreborn.netlify.app/djr_music_explorer/';
+  : 'https://digitaljamradioservice.netlify.app/djr_music_explorer/';
 const SCOPES = [
   'user-read-private',
   'user-read-email',
