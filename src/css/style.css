@@ -344,7 +344,7 @@ main section img {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   width: 100px;
-  height: auto;
+  height: 100px;
   margin: 1rem;
   border: none;
 }
