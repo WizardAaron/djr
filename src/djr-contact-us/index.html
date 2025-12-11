@@ -34,11 +34,40 @@
     <main>
       <h1>Contact Us</h1>
       
-      <section class="contact-info">
-        <h2>Get in Touch</h2>
-        <p>Have questions or feedback about Digital Jam Radio? We'd love to hear from you!</p>
-        <p><em>Contact form coming soon!</em></p>
-      </section>
+      <div class="form-wrapper">
+        <form id="contact-form" action="success.html" method="GET">
+          <h2>Send Us a Message</h2>
+          <fieldset>
+            <p>We value your feedback! Please use the form below to send us your suggestions, report issues, or share any other comments you may have. We look forward to hearing from you!</p>
+
+            <label for="nickname">Nickname (optional):</label>
+            <input type="text" id="nickname" name="nickname">
+
+            <label for="email">Email (required):</label>
+            <input type="email" id="email" name="email" required>
+
+            <div class="purpose-group">
+              <label for="purpose">Feedback Purpose:</label>
+              <select id="purpose" name="purpose" required>
+                <option value="" disabled selected hidden>[Select an Option]</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="issue">Issue</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="reply-ok" name="reply-ok">
+              <label for="reply-ok">I consent to being contacted via email regarding my message.</label>
+            </div>
+
+            <button type="submit">Submit Message</button>
+          </fieldset>
+        </form>
+      </div>
     </main>
 
     <footer id="main-footer">

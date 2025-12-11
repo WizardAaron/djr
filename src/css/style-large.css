@@ -114,12 +114,16 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
+        padding: 1rem;
     }
 
     body.home main h1 {
         grid-column: span 4;
         margin: 0;
-        padding-bottom: 1rem;
+    }
+
+    body.home main section {
+        margin: 0;
     }
 
     /* First section (About Digital Jam Radio) spans full width */
@@ -141,6 +145,7 @@
     /* Fourth section (Features) spans full width */
     body.home main > section:nth-of-type(4) {
         grid-column: span 4;
+        margin-bottom: 0;
     }
 
     /**************************** HERO IMAGE DESKTOP ****************************/
@@ -156,6 +161,9 @@
 
     .hero-button {
         bottom: 3rem;
+        left: auto;
+        right: 3rem;
+        transform: none;
     }
 
     .cta-button {
@@ -175,6 +183,10 @@
 
     #search-form .cta-button .btn-icon {
         display: none;
+    }
+
+    .audio-filters-info > h2 {
+      padding-left: 0.5rem !important;
     }
 
     .btn-play,
